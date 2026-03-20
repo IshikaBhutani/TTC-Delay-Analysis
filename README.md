@@ -154,7 +154,3 @@ Data Analyst | Toronto, ON
 
 ---
 
-## 📄 License
-
-This project is open source under the [MIT License](LICENSE).
-Data sourced under the [Open Government Licence – Toronto](https://open.toronto.ca/open-data-license/).
