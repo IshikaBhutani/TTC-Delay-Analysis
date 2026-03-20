@@ -6,7 +6,7 @@
 <title>TTC Delay Analysis Dashboard 2023–2024</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
   :root {
     --bg: #0d0f14;
@@ -28,7 +28,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     min-height: 100vh;
     padding: 24px;
   }
@@ -36,35 +36,34 @@
   /* HEADER */
   .header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 24px;
+    padding-bottom: 20px;
   }
-  .header-left { display: flex; align-items: center; gap: 16px; }
-  .ttc-badge {
-    background: var(--ttc-red);
-    color: white;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    padding: 8px 14px;
-    letter-spacing: -0.5px;
+  .header-left { display: flex; align-items: center; gap: 20px; }
+
+  /* TTC KEYSTONE LOGO */
+  .ttc-logo-wrap {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
+
   .title-block h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    line-height: 1;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
   }
   .title-block p {
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    margin-top: 5px;
+    letter-spacing: 0.4px;
   }
   .header-right { display: flex; gap: 10px; align-items: center; }
 
@@ -77,7 +76,7 @@
   }
   .filter-group { display: flex; flex-direction: column; gap: 4px; }
   .filter-group label {
-    font-family: 'DM Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 1px;
@@ -88,7 +87,7 @@
     border: 1px solid var(--border);
     color: var(--text);
     padding: 8px 32px 8px 12px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 13px;
     appearance: none;
     cursor: pointer;
@@ -124,7 +123,7 @@
   }
   .kpi-card:hover { border-color: var(--accent-color, var(--ttc-red)); }
   .kpi-label {
-    font-family: 'DM Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -132,22 +131,23 @@
     margin-bottom: 8px;
   }
   .kpi-value {
-    font-family: 'Syne', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 36px;
-    font-weight: 800;
-    letter-spacing: -2px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
     line-height: 1;
     color: var(--text);
   }
   .kpi-sub {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--muted);
     margin-top: 6px;
+    font-family: 'IBM Plex Sans', sans-serif;
   }
   .kpi-badge {
     display: inline-block;
     font-size: 10px;
-    font-family: 'DM Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     padding: 2px 6px;
     background: rgba(232,0,45,0.15);
     color: var(--ttc-red);
@@ -174,14 +174,15 @@
   }
   .chart-card.full { grid-column: 1 / -1; }
   .chart-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    margin-bottom: 4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin-bottom: 3px;
+    color: var(--text);
   }
   .chart-subtitle {
-    font-family: 'DM Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     color: var(--muted);
     margin-bottom: 16px;
@@ -198,12 +199,12 @@
     margin-bottom: 16px;
   }
   .insights h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
     margin-bottom: 12px;
     color: var(--ttc-red);
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
   }
   .insight-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -222,13 +223,13 @@
     margin-top: 5px;
     flex-shrink: 0;
   }
-  .insight-item p { font-size: 12px; line-height: 1.5; color: #c0c8d8; }
-  .insight-item strong { color: var(--text); }
+  .insight-item p { font-size: 12.5px; line-height: 1.6; color: #c0c8d8; font-family: 'IBM Plex Sans', sans-serif; }
+  .insight-item strong { color: var(--text); font-weight: 600; }
 
   /* FOOTER */
   .footer {
     text-align: center;
-    font-family: 'DM Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     color: var(--muted);
     padding-top: 16px;
@@ -241,10 +242,25 @@
 
 <div class="header">
   <div class="header-left">
-    <div class="ttc-badge">TTC</div>
+    <!-- TTC Keystone Logo (official geometry recreated in SVG) -->
+    <div class="ttc-logo-wrap">
+      <svg width="90" height="56" viewBox="0 0 180 112" xmlns="http://www.w3.org/2000/svg">
+        <!-- Red keystone background shape -->
+        <polygon points="0,0 180,0 180,80 90,112 0,80" fill="#DA291C"/>
+        <!-- White TTC letters -->
+        <!-- T (left) -->
+        <rect x="14" y="18" width="38" height="9" fill="white"/>
+        <rect x="28" y="27" width="11" height="38" fill="white"/>
+        <!-- T (center) -->
+        <rect x="71" y="18" width="38" height="9" fill="white"/>
+        <rect x="85" y="27" width="11" height="38" fill="white"/>
+        <!-- C (right) -->
+        <path d="M128,18 h32 v9 h-21 v30 h21 v9 h-32 v-48z" fill="white"/>
+      </svg>
+    </div>
     <div class="title-block">
       <h1>Delay Analysis Dashboard</h1>
-      <p>TORONTO TRANSIT COMMISSION · 2023–2024 · 145,212 INCIDENTS · OPEN DATA TORONTO</p>
+      <p>TORONTO TRANSIT COMMISSION &nbsp;·&nbsp; 2023–2024 &nbsp;·&nbsp; 145,212 INCIDENTS &nbsp;·&nbsp; OPEN DATA TORONTO</p>
     </div>
   </div>
 </div>
@@ -400,7 +416,7 @@ const RAW = {
 
 // ── CHART DEFAULTS ────────────────────────────────────────────────────────────
 Chart.defaults.color = '#6b7280';
-Chart.defaults.font.family = 'DM Mono, monospace';
+Chart.defaults.font.family = 'IBM Plex Mono, monospace';
 Chart.defaults.font.size = 10;
 
 const COLORS = {
@@ -430,8 +446,8 @@ function baseOpts() {
       borderWidth: 1,
       titleColor: '#f0f2f8',
       bodyColor: '#9ca3af',
-      titleFont: { family: 'Syne', weight: '700', size: 12 },
-      bodyFont: { family: 'DM Mono', size: 10 },
+      titleFont: { family: 'IBM Plex Sans', weight: '600', size: 12 },
+      bodyFont: { family: 'IBM Plex Mono', size: 10 },
       padding: 10,
     }},
   };
@@ -508,7 +524,7 @@ function initCharts() {
       plugins: {
         ...baseOpts().plugins,
         legend: { display: true, position: 'right',
-          labels: { color: '#9ca3af', font: { size: 9, family: 'DM Mono' }, boxWidth: 8, padding: 6 }
+          labels: { color: '#9ca3af', font: { size: 9, family: 'IBM Plex Mono' }, boxWidth: 8, padding: 6 }
         }
       }
     }
@@ -526,7 +542,7 @@ function initCharts() {
     },
     options: { ...baseOpts(),
       plugins: { ...baseOpts().plugins,
-        legend: { display: true, labels: { color: '#9ca3af', font: { size: 10, family: 'DM Mono' }, boxWidth: 12 } }
+        legend: { display: true, labels: { color: '#9ca3af', font: { size: 10, family: 'IBM Plex Mono' }, boxWidth: 12 } }
       },
       scales: {
         x: { grid: { display: false }, ticks: { color: '#6b7280' } },
