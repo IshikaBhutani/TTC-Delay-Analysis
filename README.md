@@ -146,24 +146,19 @@ Based on the analysis, three targeted improvements could reduce delay frequency 
 3. **Increase overnight spare vehicle and crew coverage** — late-night delays are disproportionately long. Pre-positioning spare buses and operators at key overnight terminals (especially on Friday–Saturday nights) would reduce average delay duration during these windows.
 
 ---
-
+ 
 ## 📸 Dashboard Preview
+ 
+[!TTC Delay Analysis Dashboard](https://ishikabhutani.github.io/TTC-Delay-Analysis/Dashboard/ttc_dashboard.html)
+ 
 
-![TTC Delay Analysis Dashboard](screenshot.png)
-
-*Interactive dashboard with filters by transit type, year, and day of week.*
-
+ 
 ---
-
 ## 👤 Author
 
 **Ishika Bhutani**
 Data Analyst | Toronto, ON
-[GitHub](https://github.com/yourusername) · [LinkedIn](https://linkedin.com/in/yourprofile)
+[GitHub](https://github.com/IshikaBhutani) · [LinkedIn](https://www.linkedin.com/in/ishikabhutani/)
 
 ---
 
-## 📄 License
-
-This project is open source under the [MIT License](LICENSE).
-Data sourced under the [Open Government Licence – Toronto](https://open.toronto.ca/open-data-license/).
